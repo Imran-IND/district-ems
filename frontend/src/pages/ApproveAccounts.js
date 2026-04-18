@@ -15,7 +15,7 @@ const ApproveAccounts = () => {
   const fetchRequests = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:5000/api/offices/requests",
+        "https://ems-backend-2my3.onrender.com/api/offices/requests",
         {
           headers: { Authorization: `Bearer ${token}` }
         }
@@ -29,7 +29,7 @@ const ApproveAccounts = () => {
   const approve = async (id) => {
     try {
       await axios.put(
-        `http://localhost:5000/api/offices/approve/${id}`,
+        `https://ems-backend-2my3.onrender.com/api/offices/approve/${id}`,
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -47,7 +47,7 @@ const ApproveAccounts = () => {
 
     try {
       await axios.put(
-        `http://localhost:5000/api/offices/reject/${id}`,
+        `https://ems-backend-2my3.onrender.com/api/offices/reject/${id}`,
         { reason },
         { headers: { Authorization: `Bearer ${token}` } }
       );
