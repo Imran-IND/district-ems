@@ -27,7 +27,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/login", {
+      const res = await axios.post("https://ems-backend-2my3.onrender.com/api/auth/login", {
         identifier,
         password
       });
@@ -64,7 +64,7 @@ const Login = () => {
         return;
       }
 
-      await axios.post("http://localhost:5000/api/offices/apply", form);
+      await axios.post("https://ems-backend-2my3.onrender.com/api/offices/apply", form);
 
       alert("Request sent for approval ✅");
 
