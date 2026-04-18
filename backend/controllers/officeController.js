@@ -54,7 +54,7 @@ exports.approveOffice = async (req, res) => {
           Please login and change your password immediately.
         </p>
 
-        <p>Login: http://localhost:3000</p>
+        <p>Login: https://district-ems.vercel.app</p>
       `
     );
 
@@ -124,7 +124,7 @@ exports.createOffice = async (req, res) => {
           Please login and change your password immediately.
         </p>
 
-        <p>Login: http://localhost:3000</p>
+        <p>Login: https://district-ems.vercel.app</p>
       `
     );
 
