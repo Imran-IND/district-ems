@@ -56,7 +56,7 @@ const [showPreview, setShowPreview] = useState(false);
  const fetchEmployees = async () => {
   try {
     const res = await axios.get(
-      `http://localhost:5000/api/employees?search=${search}&officeId=${officeId}&page=${page}&limit=10`,
+      `https://ems-backend-2my3.onrender.com/api/employees?search=${search}&officeId=${officeId}&page=${page}&limit=10`,
       {
         headers: { Authorization: `Bearer ${token}` }
       }
@@ -70,7 +70,7 @@ const [showPreview, setShowPreview] = useState(false);
 
 const fetchOffices = async () => {
   try {
-    const res = await axios.get("http://localhost:5000/api/offices", {
+    const res = await axios.get("https://ems-backend-2my3.onrender.com/api/offices", {
       headers: { Authorization: `Bearer ${token}` }
     });
 
@@ -118,7 +118,7 @@ const handleUpdate = async () => {
 
   try {
     await axios.put(
-      `http://localhost:5000/api/employees/${editEmployee._id}`,
+      `https://ems-backend-2my3.onrender.com/api/employees/${editEmployee._id}`,
       editEmployee,
       {
         headers: { Authorization: `Bearer ${token}` }
@@ -178,7 +178,7 @@ const handleCreate = async () => {
 
   try {
     await axios.post(
-      "http://localhost:5000/api/employees",
+      "https://ems-backend-2my3.onrender.com/api/employees",
       addEmployee,
       {
         headers: { Authorization: `Bearer ${token}` }
@@ -205,7 +205,7 @@ const handleCreate = async () => {
 // export excel
 const handleExport = async () => {
   const res = await axios.get(
-    "http://localhost:5000/api/employees/export",
+    "https://ems-backend-2my3.onrender.com/api/employees/export",
     {
       headers: { Authorization: `Bearer ${token}` },
       responseType: "blob"
@@ -231,7 +231,7 @@ const handleSavePreview = async () => {
 
   try {
     await axios.post(
-  "http://localhost:5000/api/employees/save-preview",
+  "https://ems-backend-2my3.onrender.com/api/employees/save-preview",
   { data: validEmployees },
       {
         headers: { Authorization: `Bearer ${token}` }
@@ -267,7 +267,7 @@ const handleImport = async (e) => {
 
   try {
     const res = await axios.post(
-      "http://localhost:5000/api/employees/import",
+      "https://ems-backend-2my3.onrender.com/api/employees/import",
       formData,
       {
         headers: {
@@ -320,7 +320,7 @@ const handleImport = async (e) => {
 const handleDownloadSample = async () => {
   try {
     const res = await axios.get(
-      "http://localhost:5000/api/employees/sample",
+      "https://ems-backend-2my3.onrender.com/api/employees/sample",
       {
         headers: { Authorization: `Bearer ${token}` },
         responseType: "blob"
@@ -347,7 +347,7 @@ const handleDownloadSample = async () => {
     if (!window.confirm("Delete this employee?")) return;
 
     try {
-      await axios.delete(`http://localhost:5000/api/employees/${id}`, {
+      await axios.delete(`https://ems-backend-2my3.onrender.com/api/employees/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
 
