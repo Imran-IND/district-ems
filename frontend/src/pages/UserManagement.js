@@ -17,7 +17,7 @@ const UserManagement = () => {
 
   const fetchUsers = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/auth/users", {
+      const res = await axios.get("https://ems-backend-2my3.onrender.com/api/auth/users", {
         headers: { Authorization: `Bearer ${token}` }
       });
       setUsers(res.data);
@@ -30,7 +30,7 @@ const UserManagement = () => {
   const resetPassword = async (id) => {
     try {
       await axios.put(
-        `http://localhost:5000/api/auth/reset-password/${id}`,
+        `https://ems-backend-2my3.onrender.com/api/auth/reset-password/${id}`,
         {},
         {
           headers: { Authorization: `Bearer ${token}` }
@@ -56,7 +56,7 @@ const UserManagement = () => {
 
     try {
       await axios.delete(
-        `http://localhost:5000/api/auth/users/${id}`,
+        `https://ems-backend-2my3.onrender.com/api/auth/users/${id}`,
         {
           headers: { Authorization: `Bearer ${token}` }
         }
