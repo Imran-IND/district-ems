@@ -31,7 +31,7 @@ const Offices = () => {
   // ================= FETCH =================
   const fetchOffices = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/offices", {
+      const res = await axios.get("https://ems-backend-2my3.onrender.com/api/offices", {
         headers: { Authorization: `Bearer ${token}` }
       });
       setOffices(res.data);
@@ -63,12 +63,12 @@ const Offices = () => {
     try {
       if (editMode) {
         await axios.put(
-          `http://localhost:5000/api/offices/${selectedOffice._id}`,
+          `https://ems-backend-2my3.onrender.com/api/offices/${selectedOffice._id}`,
           form,
           { headers: { Authorization: `Bearer ${token}` } }
         );
       } else {
-        await axios.post("http://localhost:5000/api/offices", form, {
+        await axios.post("https://ems-backend-2my3.onrender.com/api/offices", form, {
           headers: { Authorization: `Bearer ${token}` }
         });
       }
@@ -88,7 +88,7 @@ const Offices = () => {
     if (!window.confirm("Delete this office?")) return;
 
     try {
-      await axios.delete(`http://localhost:5000/api/offices/${id}`, {
+      await axios.delete(`https://ems-backend-2my3.onrender.com/api/offices/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
 
@@ -130,7 +130,7 @@ const Offices = () => {
 
     // 🔍 Check if user already exists
     const res = await axios.get(
-      `http://localhost:5000/api/auth/user-by-office/${officeId}`,
+      `https://ems-backend-2my3.onrender.com/api/auth/user-by-office/${officeId}`,
       {
         headers: { Authorization: `Bearer ${token}` }
       }
@@ -141,7 +141,7 @@ const Offices = () => {
     if (existingUser && existingUser._id) {
       // ✅ UPDATE ROLE (THIS IS WHAT YOU WANT)
       await axios.put(
-        `http://localhost:5000/api/auth/change-role/${existingUser._id}`,
+        `https://ems-backend-2my3.onrender.com/api/auth/change-role/${existingUser._id}`,
         { role },
         {
           headers: { Authorization: `Bearer ${token}` }
@@ -154,7 +154,7 @@ const Offices = () => {
       const email = prompt("Enter Email");
 
       await axios.post(
-        "http://localhost:5000/api/auth/register",
+        "https://ems-backend-2my3.onrender.com/api/auth/register",
         {
           name: "New User",
           mobile: Date.now().toString(),
