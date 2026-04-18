@@ -12,7 +12,7 @@ const ChangePassword = () => {
       const token = localStorage.getItem("token");
 
       await axios.put(
-        "http://localhost:5000/api/auth/change-password",
+        "https://ems-backend-2my3.onrender.com/api/auth/change-password",
         {
           oldPassword,
           newPassword
