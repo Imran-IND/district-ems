@@ -13,7 +13,7 @@ const Dashboard = () => {
   const fetchStats = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:5000/api/employees/dashboard/stats",
+        "https://ems-backend-2my3.onrender.com/api/employees/dashboard/stats",
         {
           headers: { Authorization: `Bearer ${token}` }
         }
