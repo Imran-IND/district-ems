@@ -32,7 +32,7 @@ exports.approveOffice = async (req, res) => {
     const user = await User.create({
       name: office.name,
       email: request.email,
-      mobile: request.hodContact,
+     mobile: request.hodContact || request.contact || "0000000000",
       password: hashed,
       role: "office",
       officeId: office._id,
