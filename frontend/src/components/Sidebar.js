@@ -16,7 +16,7 @@ const Sidebar = () => {
 
   const fetchPendingCount = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/offices/requests", {
+      const res = await fetch("https://ems-backend-2my3.onrender.com/api/offices/requests", {
         headers: {
           Authorization: `Bearer ${token}`
         }
